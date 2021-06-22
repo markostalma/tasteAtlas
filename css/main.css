@@ -646,14 +646,18 @@ footer .footer-bottom ul span {
     margin-bottom: 35px;
   }
   .search-section .middle-row .col {
-    width: 100px;
+    min-width: 100px;
+    width: 100px !important;
     height: 100px;
     padding: 7px 12px;
+    margin-right: 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .search-section .middle-row .col img {
     top: -15px;
-    max-width: 75px;
-    width: 100%;
+    min-width: 75px;
+    width: 75px;
     height: auto;
   }
   .search-section .middle-row .col .name-wrapper {
@@ -662,6 +666,14 @@ footer .footer-bottom ul span {
   .search-section .middle-row .col .name-wrapper h4 {
     font-size: 11px;
     line-height: 13px;
+  }
+  .search-section .middle-row .col:hover {
+    cursor: pointer;
+    -webkit-transform: none;
+            transform: none;
+  }
+  .selected-recipes-section {
+    overflow-x: hidden;
   }
 }
 
@@ -798,6 +810,20 @@ footer .footer-bottom ul span {
   }
 }
 
+@media only screen and (min-width: 576px) {
+  .search-section .middle-row .middle-row__top,
+  .search-section .middle-row .middle-row__bottom {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .selected-recipes-section .row-items {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+
 @media only screen and (max-width: 576px) {
   .selected-recipes-section {
     padding: 40px 0;
@@ -809,14 +835,16 @@ footer .footer-bottom ul span {
             justify-content: center;
   }
   .selected-recipes-section .row-items {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
   .selected-recipes-section .row-items .col {
-    max-width: 100%;
-    width: 100%;
+    min-width: 247px;
+    width: 247px;
+    margin: 0 10px;
+  }
+  .selected-recipes-section .row-items .col #recipe-video::after {
+    display: none;
   }
   .best-recipes-section {
     padding: 40px 0;
@@ -847,24 +875,6 @@ footer .footer-bottom ul span {
   }
   .best-recipes-section .left-content .row-items .col img {
     width: 100%;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .search-section .middle-row .middle-row__top {
-    margin-bottom: 35px;
-  }
-  .search-section .middle-row .col {
-    width: 90px;
-    max-width: 90px;
-    height: 90px;
-    padding: 5px;
-  }
-  .search-section .middle-row .col img {
-    top: -15px;
-    max-width: 55px;
-    width: 55px;
-    height: auto;
   }
 }
 
