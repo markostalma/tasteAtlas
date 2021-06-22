@@ -1,0 +1,99 @@
+// Fonts Families
+$montserrat: 'Montserrat', sans-serif;
+$merriweather: 'Merriweather', serif;
+$openSans: 'Open Sans';
+
+// Colors 
+$white: #FFFFFF;
+$black: #1F1F1F;
+$gray: #F8F8F8;
+$gray-dark: #353535;
+$gray-border: #DEDEDE;
+$orange: #FB3D02;
+
+// Breakpoints mixin
+@mixin maxBreakpoint ($value) {
+	@if $value == 'phone' {
+		@media only screen and (max-width: 375px) { @content; }
+	} @else if $value == 'large-phone' {
+		@media only screen and (max-width: 576px) { @content; }
+	} @else if $value == 'tablet' {
+		@media only screen and (max-width: 769px) { @content; }
+	} @else if $value == 'touch' {
+		@media only screen and (max-width: 992px) { @content; }
+	} @else if $value == 'desktop' {
+		@media only screen and (min-width: 1204px) { @content; }
+	} @else {
+		@media only screen and (max-width: $value) { @content; }
+	}
+}
+
+@mixin minBreakpoint ($value) {
+	@if $value == 'phone' {
+		@media only screen and (min-width: 375px) { @content; }
+	} @else if $value == 'large-phone' {
+		@media only screen and (min-width: 576px) { @content; }
+	} @else if $value == 'tablet' {
+		@media only screen and (min-width: 769px) { @content; }
+	} @else if $value == 'touch' {
+		@media only screen and (min-width: 992px) { @content; }
+	} @else if $value == 'desktop' {
+		@media only screen and (max-width: 1204px) { @content; }
+	} @else {
+		@media only screen and (min-width: $value) { @content; }
+	}
+}
+
+
+// Small Reset
+html {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+h2 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 45px;
+  color: $black;
+}
+
+h3 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: $black;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}

@@ -1,0 +1,50 @@
+<section class="best-recipes-section">
+  <div class="container">
+    <div class="row">
+      <div class="left-content">
+        <div class="row row-heading">
+          <h2>Najbolji Recepti</h2>
+          <div class="best-recipe-btns-wrapper">
+            <button class="best-recipe-btn best-recipe__active-btn">Najbolji</button>
+            <button class="best-recipe-btn">Najnoviji</button>
+            <button class="best-recipe-btn">Najbrži</button>
+          </div>
+        </div>
+        <div class="row" ng-hide="notFoundTxt == null">
+          <span style="margin-bottom: 30px;">{{ notFoundTxt }}</span>
+        </div>
+        <div class="row row-items">
+          <div class="col" ng-repeat="recipe in allRecipes">
+            <div class="recipe-img" id="{{ recipe.type }}">
+              <picture>
+                <source media="(max-width: 769px)" srcset="{{ recipe.largeImage }}">
+                <img src="{{recipe.image}}" alt="glavna jela">
+              </picture>
+            </div>
+            <div class="row row__rating-duration">
+              <ul class="rating">
+                <li><img src="./img/star-rating.svg" alt="orange star rating"></li>
+                <li><img src="./img/star-rating.svg" alt="orange star rating"></li>
+                <li><img src="./img/star-rating.svg" alt="orange star rating"></li>
+                <li><img src="./img/star-rating-gray.svg" alt="orange star rating"></li>
+                <li><img src="./img/star-rating-gray.svg" alt="orange star rating"></li>
+              </ul>
+              <span class="duration">{{ recipe.duration }}</span>
+            </div>
+            <span class="category">{{ recipe.category }}</span>
+            <h6 class="name">{{ recipe.name }}</h6>
+            <p class="description">{{ recipe.description }}</p>
+          </div>
+          <div class="row read-more-row">
+            <button class="read-more-btn">UČITAJ VIŠE RECEPATA</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-content">
+        <a href="#"><img src="./img/ads-left-content.png" width="100%" height="auto" alt="ads banner"></a>
+      </div>
+
+    </div>
+  </div>
+</section>
